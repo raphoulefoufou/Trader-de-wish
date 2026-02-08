@@ -33,7 +33,9 @@ if(isset($_POST['explore'])){
         </div>
         <hr>
         <ul>
-            <li><a href="Home.php">Accueil</a></li>
+            <li><a class="textelien" href="Home.php">Accueil</a></li>
+            <li><a class="textelien" href="connexion.php"> Se connecter </a></li>
+            <li><a class="textelien" href="enregistrement.php">S'inscrire </a></li>
         </ul>
     </div>
 
