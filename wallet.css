@@ -1,0 +1,96 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0b1220;
+    color: white;
+}
+
+/* Conteneur principal */
+.wallet-container {
+    padding: 40px 60px;
+}
+
+/* Titre principal */
+.wallet-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Sous-titre */
+.wallet-container h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Carte bleue */
+.wallet-card {
+    background: #2f5ae0;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Montant */
+.wallet-card p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #a7f3d0;
+}
+
+/* Carte Vos actions */
+.actions-card {
+    margin-top: 40px;
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+}
+
+/* Titre */
+.actions-card h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: normal;
+    color: #cbd5e1;
+}
+
+/* Ligne action */
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #334155;
+}
+
+.action-row:last-child {
+    border-bottom: none;
+}
+
+/* Nom */
+.action-name {
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+/* Prix */
+.action-price {
+    font-weight: bold;
+    color: #e2e8f0;
+}
+
+/* Ligne total plus visible */
+.action-row.total .action-name,
+.action-row.total .action-price {
+    font-size: 16px;
+    color: white;
+}

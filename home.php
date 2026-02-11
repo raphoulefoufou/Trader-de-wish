@@ -1,5 +1,4 @@
 <?php
-// TOUJOURS placer le PHP de redirection au sommet absolu du fichier
 if(isset($_POST['start'])){
     header('Location: trader.php');
     exit;
@@ -20,6 +19,9 @@ if(isset($_POST['explore'])){
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </head>
+<?php
+include 'securite.php'
+?>
 <body class="hero">
 
 <header>

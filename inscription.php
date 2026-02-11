@@ -28,6 +28,7 @@ if ($ok) {
         "email"  => $email,
         "mdp"    => password_hash($mdp, PASSWORD_DEFAULT)
     ]);
+    session_start();
     echo '1';
 
 
