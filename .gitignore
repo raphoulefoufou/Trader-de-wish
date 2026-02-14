@@ -1,0 +1,10 @@
+# Clé API
+.env
+
+# Données
+*2022_2024*.csv
+*2025_2026*.csv
+sentiment_equilibre.csv
+
+# Python
+__pycache__/
