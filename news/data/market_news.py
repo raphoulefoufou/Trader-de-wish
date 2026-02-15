@@ -4,16 +4,23 @@ import time
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import sys
 
 env_path = Path(__file__).parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY")
-TICKER = "NVDA"
+TICKER = "AMD"
+FINAL_OUTPUT = f"news/data/{TICKER}_News_2022_2026.csv"
+
+# On vérifie si le travail est déjà fait avant de lancer les requêtes
+if os.path.exists(FINAL_OUTPUT):
+    print(f"Le fichier final pour {TICKER} existe déjà ({FINAL_OUTPUT}).")
+    print("Arrêt du script pour économiser le quota API et le temps.")
+    sys.exit() # Arrête l'exécution
 
 # Fonctions
-
 # Extrait le relevance_score pour le TICKER choisi
 def get_relevance(ticker_list):
     for item in ticker_list:
