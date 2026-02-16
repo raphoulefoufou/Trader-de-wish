@@ -8,3 +8,7 @@ sentiment_equilibre.csv
 
 # Python
 __pycache__/
+
+# Modèles et résultats
+sentiment_score_map.json
+confusion_matrix.png
