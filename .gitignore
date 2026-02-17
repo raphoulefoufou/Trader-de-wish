@@ -12,4 +12,5 @@ test.py
 
 # Modèles et résultats
 sentiment_score_map.json
-confusion_matrix_kfold.png
+confusion_matrix_tfidf.png
+confusion_matrix_vader.png

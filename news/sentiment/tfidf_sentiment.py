@@ -147,7 +147,7 @@ def train_and_test_tfidf(dataset_path="sentiment_equilibre.csv", k=10):
     plt.title(f'Matrice de Confusion Cumulée (K-Fold, K={k})')
     plt.ylabel('Réalité')
     plt.xlabel('Prédictions')
-    plt.savefig("news/sentiment/confusion_matrix_kfold.png")
+    plt.savefig("news/sentiment/confusion_matrix_tfidf.png")
 
     # GÉNÉRATION DU MODÈLE FINAL
     print("\nGénération du lexique final sur 100% des données...")
