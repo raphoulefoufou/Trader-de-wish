@@ -6,12 +6,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import sys
 
-env_path = Path(__file__).parent.parent / '.env'
+env_path = Path(__file__).parent.parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY")
-TICKER = "AMD"
+TICKER = "AVGO"
 FINAL_OUTPUT = f"news/data/{TICKER}_News_2022_2026.csv"
 
 # On vérifie si le travail est déjà fait avant de lancer les requêtes
@@ -37,7 +37,7 @@ def fetch_api_news(start_date, end_date):
         response = requests.get(url)
         data = response.json()
         if "Information" in data:
-            print(f"Quota atteint. Arrêt du script.")
+            print(f"Message API : {data['Information']}")
             return None
         return data.get("feed", [])
     except Exception as e:
