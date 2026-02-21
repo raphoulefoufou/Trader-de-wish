@@ -1,11 +1,11 @@
 <?php
 if(isset($_POST['start'])){
-    header('Location: trader.php');
+    header('Location: dashboard.php');
     exit;
 }
 
 if(isset($_POST['explore'])){
-    header('Location: explorer.php');
+    header('Location: marches.php');
     exit;
 }
 ?>
@@ -20,7 +20,7 @@ if(isset($_POST['explore'])){
     
 </head>
 <?php
-include 'securite.php'
+include 'securite.php';
 ?>
 <body class="hero">
 
@@ -38,6 +38,13 @@ include 'securite.php'
             <li><a class="textelien" href="Home.php">Accueil</a></li>
             <li><a class="textelien" href="connexion.php"> Se connecter </a></li>
             <li><a class="textelien" href="enregistrement.php">S'inscrire </a></li>
+            <li><a class="textelien" href="dashboard.php">Dashboard </a></li>
+                        <li><a class="textelien" href="marches.php">Marchés </a></li>
+            <?php 
+            if (isset($_SESSION['client']['pseudo'])){?>
+             <li><a class="textelien" href="deconnexion.php">Se deconnecter </a></li>
+            <?php } ?>
+
         </ul>
     </div>
 
@@ -68,7 +75,6 @@ include 'securite.php'
             $("#menu-ouvert").fadeOut();
         });
 
-        // Optionnel : Fermer le menu si on clique en dehors
         $(document).mouseup(function(e) {
             var container = $("#menu-ouvert");
             if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -77,6 +83,6 @@ include 'securite.php'
         });
     });
 </script>
-    
+
 </body>
 </html>

@@ -10,13 +10,24 @@
 </head>
 <body>
 <?php
+
+if(isset($_POST['dash'])){
+    header('Location: dashboard.php');
+    exit();
+}
+
 if(isset($_POST['home'])){
     header('Location: home.php');
     exit();
 }
 
-if(isset($_POST['pf'])){
+if(isset($_POST['portfolio'])){
     header('Location: wallet.php');
+    exit();
+}
+
+if(isset($_POST['marche'])){
+    header('Location: marches.php');
     exit();
 }
 ?>

@@ -28,7 +28,13 @@ if ($ok) {
         "email"  => $email,
         "mdp"    => password_hash($mdp, PASSWORD_DEFAULT)
     ]);
-    session_start();
+     session_start();
+    $_SESSION['client'] = [
+        'id'     => $client['id'], // Utile pour tes requêtes SQL plus tard
+        'pseudo' => $client['pseudo'], // Ce que tu cherches dans panier.php
+        'email'  => $client['email'],
+        'monnaie'=> $client['monnaie'],
+    ];
     echo '1';
 
 
