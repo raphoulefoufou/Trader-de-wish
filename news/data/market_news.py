@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=env_path)
 
 # Configuration
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY")
-TICKER = "AVGO"
+TICKER = "BABA"
 FINAL_OUTPUT = f"news/data/{TICKER}_News_2022_2026.csv"
 
 # On vérifie si le travail est déjà fait avant de lancer les requêtes
@@ -80,7 +80,7 @@ if not os.path.exists(file_raw_22_24):
         news = fetch_api_news(f"{year}0101T0000", f"{year}1231T2359")
         if news is None: break
         all_data_22_24.extend(news)
-        time.sleep(15) # Pause pour respecter les limites de l'API
+        time.sleep(16) # Pause pour respecter les limites de l'API
     
     if all_data_22_24:
         df = pd.DataFrame(all_data_22_24)
