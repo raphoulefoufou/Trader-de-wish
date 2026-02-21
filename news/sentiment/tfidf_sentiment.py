@@ -7,7 +7,7 @@ import random
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def train_and_test_tfidf(dataset_path="sentiment_equilibre.csv", k=10):
+def train_and_test_tfidf(dataset_path, k):
     # Chargement des stopwords
     stopwords = []
     stopwords_path = "news/sentiment/stopwords-en.txt"
