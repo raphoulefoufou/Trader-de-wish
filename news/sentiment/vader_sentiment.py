@@ -5,7 +5,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def train_and_test_vader(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10):
+def train_and_test_vader(dataset_path, k):
     # Initialisation de l'analyseur VADER
     analyzer = SentimentIntensityAnalyzer()
     
