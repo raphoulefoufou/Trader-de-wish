@@ -5,7 +5,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10):
+def train_and_test_vader(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10):
     # Initialisation de l'analyseur VADER
     analyzer = SentimentIntensityAnalyzer()
     
@@ -110,4 +110,4 @@ def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv"
     plt.savefig("news/sentiment/confusion_matrix_vader.png")
 
 if __name__ == "__main__":
-    evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10)
+    train_and_test_vader(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10)
