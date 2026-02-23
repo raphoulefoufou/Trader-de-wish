@@ -88,9 +88,9 @@ def train_and_test_vader(dataset_path, k):
         f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
         return precision, recall, f1
 
-    print("\n" + "="*30)
+    print("\n" + "="*60)
     print(f"RÉSULTATS FINAUX VADER (MOYENNE SUR {k} FOLDS)")
-    print("="*30)
+    print("="*60)
     print(f"{'Classe':<10} | {'Precision':<10} | {'Recall':<10} | {'F1-Score':<10}")
     print("-" * 45)
     for i, name in enumerate(labels_names):
@@ -100,6 +100,7 @@ def train_and_test_vader(dataset_path, k):
     moyenne_acc = sum(accuracies) / k
     print("-" * 45)
     print(f"Accuracy Moyenne Globale : {moyenne_acc:.2f}%")
+    print("="*60 + "\n")
 
     # Visualisation
     plt.figure(figsize=(8, 6))
