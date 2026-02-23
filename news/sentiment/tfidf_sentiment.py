@@ -11,9 +11,11 @@ def train_and_test_tfidf(dataset_path, k):
     # Chargement des stopwords
     stopwords = []
     stopwords_path = "news/sentiment/stopwords-en.txt"
-    if os.path.exists(stopwords_path):
-        with open(stopwords_path, 'r', encoding='utf-8') as f:
-            stopwords = f.read().splitlines()
+    if not os.path.exists(stopwords_path):
+        print(f"Erreur : {stopwords_path} introuvable")
+        return
+    with open(stopwords_path, 'r', encoding='utf-8') as f:
+        stopwords = f.read().splitlines()
 
     def pretraitement(texte):
         texte = str(texte).lower()
@@ -52,7 +54,7 @@ def train_and_test_tfidf(dataset_path, k):
     # Index 0: -1 (Neg), Index 1: 0 (Neu), Index 2: 1 (Pos)
     idx_map = {-1: 0, 0: 1, 1: 2}
 
-    print(f"Démarrage de la validation croisée (K={k}) sur {len(data)} articles...")
+    print(f"Démarrage de l'évaluation TF-IDF (K-Fold, K={k}) sur {len(data)} articles...")
 
     for fold in range(k):
         # Découpage train/test pour ce pli
@@ -118,7 +120,7 @@ def train_and_test_tfidf(dataset_path, k):
 
     # Affichage des résultats
     print("\n" + "="*60)
-    print("MATRICE DE CONFUSION CUMULÉE")
+    print("MATRICE DE CONFUSION CUMULÉE : TF-IDF")
     print("="*60)
     labels_names = ["Négatif", "Neutre", "Positif"]
     header = f"{'Réel \\\\ Prédit':<15} | " + " | ".join([f"{name:<10}" for name in labels_names])
@@ -128,9 +130,9 @@ def train_and_test_tfidf(dataset_path, k):
         row_content = " | ".join([f"{val:<10}" for val in cm_globale[i]])
         print(f"{name:<15} | {row_content}")
     
-    print("\n" + "="*30)
+    print("\n" + "="*60)
     print(f"RÉSULTATS FINAUX (MOYENNE SUR {k} FOLDS)")
-    print("="*30)
+    print("="*60)
     labels_names = ["Négatif", "Neutre", "Positif"]
     print(f"{'Classe':<10} | {'Precision':<10} | {'Recall':<10} | {'F1-Score':<10}")
     print("-" * 45)
@@ -140,11 +142,12 @@ def train_and_test_tfidf(dataset_path, k):
     
     print("-" * 45)
     print(f"Accuracy Moyenne Globale : {moyenne_acc:.2f}%")
+    print("="*60 + "\n")
 
     # Visualisation
     plt.figure(figsize=(8, 6))
     sns.heatmap(cm_globale, annot=True, fmt='d', cmap='Blues', xticklabels=labels_names, yticklabels=labels_names)
-    plt.title(f'Matrice de Confusion Cumulée (K-Fold, K={k})')
+    plt.title(f'Matrice de Confusion TF-IDF (K-Fold, K={k})')
     plt.ylabel('Réalité')
     plt.xlabel('Prédictions')
     plt.savefig("news/sentiment/confusion_matrix_tfidf.png")
