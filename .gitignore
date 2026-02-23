@@ -13,4 +13,6 @@ test*.py
 
 # Modèles et résultats
 sentiment_score_map.json
+w2v_modele.model
+w2v_classifier.joblib
 confusion_matrix*.png
