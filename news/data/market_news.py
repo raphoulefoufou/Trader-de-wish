@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=env_path)
 
 # Configuration
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY")
-TICKER = "BIDU"
+TICKER = "CRM" # Changez ce ticker selon vos besoins (ex: AAPL, MSFT, etc.)
 FINAL_OUTPUT = f"news/data/{TICKER}_News_2022_2026.csv"
 
 # On vérifie si le travail est déjà fait avant de lancer les requêtes
