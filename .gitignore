@@ -4,13 +4,15 @@
 # Données
 *2022_2024*.csv
 *2025_2026*.csv
-sentiment_equilibre.csv
+sentiment_equilibre*.csv
+data2.csv
 
 # Python
 __pycache__/
-test.py
+test*.py
 
 # Modèles et résultats
 sentiment_score_map.json
-confusion_matrix_tfidf.png
-confusion_matrix_vader.png
+w2v_modele.model
+w2v_classifier.joblib
+confusion_matrix*.png

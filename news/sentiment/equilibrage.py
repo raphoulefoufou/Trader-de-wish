@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 def equilibrer_nouveau_dataset(input_file, output_file):
     # 1. Charger le fichier

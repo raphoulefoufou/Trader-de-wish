@@ -5,7 +5,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10):
+def train_and_test_vader(dataset_path, k):
     # Initialisation de l'analyseur VADER
     analyzer = SentimentIntensityAnalyzer()
     
@@ -88,9 +88,9 @@ def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv"
         f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
         return precision, recall, f1
 
-    print("\n" + "="*30)
+    print("\n" + "="*60)
     print(f"RÉSULTATS FINAUX VADER (MOYENNE SUR {k} FOLDS)")
-    print("="*30)
+    print("="*60)
     print(f"{'Classe':<10} | {'Precision':<10} | {'Recall':<10} | {'F1-Score':<10}")
     print("-" * 45)
     for i, name in enumerate(labels_names):
@@ -100,6 +100,7 @@ def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv"
     moyenne_acc = sum(accuracies) / k
     print("-" * 45)
     print(f"Accuracy Moyenne Globale : {moyenne_acc:.2f}%")
+    print("="*60 + "\n")
 
     # Visualisation
     plt.figure(figsize=(8, 6))
@@ -110,4 +111,4 @@ def evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv"
     plt.savefig("news/sentiment/confusion_matrix_vader.png")
 
 if __name__ == "__main__":
-    evaluation_vader_kfold(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10)
+    train_and_test_vader(dataset_path="news/sentiment/sentiment_equilibre.csv", k=10)
