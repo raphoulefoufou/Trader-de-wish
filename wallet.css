@@ -3,94 +3,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #0b1220;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
+    padding: 30px;
 }
 
-/* Conteneur principal */
+/* Container principal */
 .wallet-container {
-    padding: 40px 60px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* Titre principal */
-.wallet-container h1 {
+/* Titres */
+h1 {
     font-size: 28px;
     margin-bottom: 10px;
 }
 
-/* Sous-titre */
-.wallet-container h2 {
-    font-size: 14px;
-    font-weight: normal;
-    color: #94a3b8;
-    margin-bottom: 30px;
+h2 {
+    font-size: 20px;
+    opacity: 0.9;
 }
 
-/* Carte bleue */
-.wallet-card {
-    background: #2f5ae0;
-    padding: 40px;
-    border-radius: 10px;
+/* Table */
+.marches {
     width: 100%;
-    max-width: 1100px;
-}
-
-/* Montant */
-.wallet-card p {
-    font-size: 36px;
-    font-weight: bold;
-    color: #a7f3d0;
-}
-
-/* Carte Vos actions */
-.actions-card {
-    margin-top: 40px;
-    background-color: #1e293b;
-    padding: 30px;
+    border-collapse: collapse;
+    background: #111827;
     border-radius: 12px;
-    max-width: 700px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* Titre */
-.actions-card h3 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: normal;
-    color: #cbd5e1;
-}
-
-/* Ligne action */
-.action-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #334155;
-}
-
-.action-row:last-child {
-    border-bottom: none;
-}
-
-/* Nom */
-.action-name {
+/* Header */
+.marches th {
+    text-align: left;
+    padding: 15px;
+    background: #1f2937;
+    color: #9ca3af;
+    font-weight: 500;
     font-size: 14px;
-    color: #e2e8f0;
+    text-transform: uppercase;
 }
 
-/* Prix */
-.action-price {
-    font-weight: bold;
-    color: #e2e8f0;
+/* Lignes */
+.marches td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #1f2937;
 }
 
-/* Ligne total plus visible */
-.action-row.total .action-name,
-.action-row.total .action-price {
-    font-size: 16px;
-    color: white;
+/* Hover effet */
+.marches tr:hover {
+    background: #1a2235;
+}
+
+/* Valeurs positives */
+.marches td:nth-child(2) {
+    color: #22c55e;
+    font-weight: 500;
+}
+
+/* Pourcentage */
+.marches td:nth-child(3) {
+    text-align: right;
+    color: #9ca3af;
+}
+
+/* Message login */
+.login-message {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    color: #f87171;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .wallet-container {
+        padding: 20px;
+    }
+
+    .marches th, 
+    .marches td {
+        padding: 12px;
+        font-size: 14px;
+    }
 }
