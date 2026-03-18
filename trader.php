@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-session_start();
+include 'securite.php';
 include 'bd.php';
 include 'header.php';
 $pdo=getBD();
@@ -49,6 +49,7 @@ if (isset($_GET["id_marche"])){
         </p>
 
     <?php } ?>
+
 
 </div>
 </div>

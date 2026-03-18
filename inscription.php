@@ -1,6 +1,5 @@
-
 <?php
-    header('Content-Type: text/plain');
+header('Content-Type: text/plain');
 
 include 'bd.php';
 $pdo = getBD();
@@ -9,37 +8,43 @@ $pseudo = $_POST['pseudo'];
 $mdp = $_POST['password'];
 $email = $_POST['mail'];
 
-$ok = true; 
+$ok = true;
+
 $sql = $pdo->prepare("SELECT pseudo, email FROM client");
 $sql->execute();
-$clients = $sql->fetchAll(PDO::FETCH_ASSOC); 
+$clients = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-foreach($clients as $cli) {
-    if($pseudo == $cli['pseudo'] || $email == $cli['email']) {
+foreach($clients as $cli){
+    if($pseudo == $cli['pseudo'] || $email == $cli['email']){
         $ok = false;
         break;
     }
 }
 
-if ($ok) {
-    $stmt = $pdo->prepare("INSERT INTO client(pseudo, email, mdp) VALUES(:pseudo, :email, :mdp)");
+if($ok){
+
+    $stmt = $pdo->prepare("INSERT INTO client(pseudo, email, mdp,monnaie) VALUES(:pseudo, :email, :mdp, :monnaie)");
     $stmt->execute([
-        "pseudo" => $pseudo,
-        "email"  => $email,
-        "mdp"    => password_hash($mdp, PASSWORD_DEFAULT)
+        "pseudo"=>$pseudo,
+        "email"=>$email,
+        "mdp"=>password_hash($mdp, PASSWORD_DEFAULT),
+        "monnaie"=>10000
     ]);
-     session_start();
+        $id = $pdo->lastInsertId();
+
+
+    session_start();
+
     $_SESSION['client'] = [
-        'id'     => $client['id'], // Utile pour tes requêtes SQL plus tard
-        'pseudo' => $client['pseudo'], // Ce que tu cherches dans panier.php
-        'email'  => $client['email'],
-        'monnaie'=> $client['monnaie'],
+        'id'=>$id,
+        'pseudo'=>$pseudo,
+        'email'=>$email,
+        'monnaie'=>10000
+        
     ];
-    echo '1';
 
-
-} else {
-    echo '0';
+    echo "1";
+}else{
+    echo "0";
 }
-exit();
-?>
+exit(); ?>

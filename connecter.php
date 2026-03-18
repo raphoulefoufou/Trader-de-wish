@@ -18,8 +18,8 @@ $update = $pdo->prepare("UPDATE client SET token = ? WHERE email = ?");
     $update->execute([$token, $email]);    
     session_start();
     $_SESSION['client'] = [
-        'id'     => $client['id'], // Utile pour tes requêtes SQL plus tard
-        'pseudo' => $client['pseudo'], // Ce que tu cherches dans panier.php
+        'id'     => $client['id'], 
+        'pseudo' => $client['pseudo'], 
         'email'  => $client['email'],
         'monnaie'=> $client['monnaie'],
     ];

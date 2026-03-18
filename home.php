@@ -22,7 +22,9 @@ if(isset($_POST['explore'])){
 <?php
 include 'securite.php';
 ?>
+
 <body class="hero">
+
 
 <header>
 
@@ -51,8 +53,15 @@ include 'securite.php';
 
 </header>
 
+
 <div class="hero-content" style="text-align: center; margin-top: 100px;">
+
     <h1>Trade For Sure</h1>
+    <?php
+if (isset($_SESSION['client']) && !empty($_SESSION['client'])){
+$pseudo=$_SESSION['client']['pseudo'];
+echo("<h2>Bienvenue sur le site $pseudo etes vous pret a trader</h2>");
+}?>
     <p>Tradez, investissez et gérez vos actions en bourse en toute confiance.</p>
 
     <form method="post">

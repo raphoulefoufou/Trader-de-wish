@@ -41,8 +41,8 @@ if(isset($_POST['marche'])){
 
             <button type="submit" name="marche">Marchés</button>
             <button type="submit" name="trade">Trader</button>
-            <button type="submit" name="wallet" >Portes Feuiles</button>
             <button type="submit" name="portfolio">Portfolio</button>
+            
         </form>
     </nav>
 </header>
