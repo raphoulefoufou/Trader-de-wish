@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=env_path)
 
 # Configuration
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY")
-TICKER = "CRM" # Changez ce ticker selon vos besoins (ex: AAPL, MSFT, etc.)
+TICKER = "OKTA" # Changez ce ticker selon vos besoins (ex: AAPL, MSFT, etc.)
 FINAL_OUTPUT = f"news/data/{TICKER}_News_2022_2026.csv"
 
 # On vérifie si le travail est déjà fait avant de lancer les requêtes
@@ -101,7 +101,13 @@ if not os.path.exists(file_raw_25_26):
     
     for y, m in periodes:
         print(f"  Récupération {y}-{m:02d}...")
-        news = fetch_api_news(f"{y}{m:02d}01T0000", f"{y}{m:02d}28T2359") # On prend 28 jours pour éviter les soucis de fin de mois
+        if m in [1, 3, 5, 7, 8, 10, 12]:
+            end_day = 31
+        elif m in [4, 6, 9, 11]:
+            end_day = 30
+        else:
+            end_day = 29 if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0) else 28
+        news = fetch_api_news(f"{y}{m:02d}01T0000", f"{y}{m:02d}{end_day:02d}T2359")
         if news is None: break
         all_data_25_26.extend(news)
         time.sleep(15)

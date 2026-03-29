@@ -89,6 +89,8 @@ def evaluation_finbert(dataset_path="news/sentiment/sentiment_equilibre.csv", k=
     plt.figure(figsize=(8, 6))
     sns.heatmap(cm_globale, annot=True, fmt='d', cmap='Purples', xticklabels=labels_names, yticklabels=labels_names)
     plt.title(f'Matrice de Confusion FinBERT (K-Fold, K={k})')
+    plt.ylabel('Réalité')
+    plt.xlabel('Prédictions')
     plt.savefig("news/sentiment/confusion_matrix_finbert.png")
 
 if __name__ == "__main__":
