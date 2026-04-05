@@ -14,7 +14,6 @@ include 'bd.php';
 $pdo=getBD();
 ?>
 <h1>Marches </h1>
-<input type="search" id="site-search" name="q" placeholder="Rechercher un marche"/>
 <?php
 $stmt=$pdo->prepare("SELECT * FROM marche");
 $stmt->execute();
@@ -26,6 +25,8 @@ $marche=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <th>Nom du Marche</th>
 <th>Prix</th>
 <th>Quantites</th>
+<th>Evolution trader</th>
+
 </tr>
 <?php
 foreach($marche as $march){
@@ -33,7 +34,8 @@ foreach($marche as $march){
     <td>{$march['id_marche']}</td>
     <td><a href=trader.php?id_marche={$march['id_marche']}>{$march['nom_marche']}</td>
     <td>{$march['prix']}</td>
-    <td>{$march['quantites']}</td>";
+    <td>{$march['quantites']}</td>
+    <td>Pour ce qui font le back up python mettez un lien qui renvoi vers la courbe qui explique evolution trade</td>";
     
 
 }
