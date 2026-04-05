@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-include 'securite.php';
+session_start();
 include 'bd.php';
 include 'header.php';
 $pdo=getBD();
