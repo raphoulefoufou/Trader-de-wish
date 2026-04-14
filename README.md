@@ -1,8 +1,10 @@
-# 📈 Trading for sure : Algorithmique Boursière
+# 📈 Trade for sure : Algorithmique Boursière
+site : [Trade For Sure](http://51.38.225.40/)
 
     Système d'aide à la décision boursière basé sur l'analyse technique profonde et l'intelligence artificielle.
 
-Trading for sure est un projet de finance quantitative visant à prédire les mouvements directionnels du marché. Le cœur du projet repose sur une exploitation des indicateurs techniques, complétée par une analyse de sentiment sémantique pour capter l'humeur des marchés.
+Trade for sure est un projet de finance quantitative visant à prédire les mouvements directionnels du marché. Le cœur du projet repose sur une exploitation des indicateurs techniques, complétée par une analyse de sentiment sémantique pour capter l'humeur des marchés.  
+
 
 ## 🛠 Architecture des Données
 
@@ -39,9 +41,8 @@ Nous comparons les modèles suivants sur les mêmes jeux de données :
 
 * Ensembles d'Arbres : Random Forest, Decision Tree (Random Tree).
 
-* Gradient Boosting (SOTA) : LightGBM, CatBoost, XGBoost.
+* Gradient Boosting (SOTA) : LightGBM, XGBoost.
 
-* Deep Learning : Réseaux de neurones Fully Connected (FCNN).
 
 
 

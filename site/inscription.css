@@ -1,0 +1,101 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Fond de la page */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #1b2a4e, #050816 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Carte de connexion */
+.connexion {
+    width: 380px;
+    padding: 30px 35px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 0 25px rgba(120, 80, 255, 0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+/* Titre */
+.connexion h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Formulaire */
+.connexion form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Champs */
+.connexion input[type="text"],
+.connexion input[type="password"] {
+    background: transparent;
+    border: 1px solid rgba(120, 180, 255, 0.5);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.connexion input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.connexion input:focus {
+    border-color: #7cf5ff;
+    box-shadow: 0 0 12px rgba(124, 245, 255, 0.6);
+}
+
+/* Bouton */
+.connexion input[type="submit"] {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(90deg, #8a2be2, #00e5ff);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+    transition: 0.3s ease;
+}
+
+.connexion input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(0, 229, 255, 0.9);
+}
+
+/* Lien */
+.connexion a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.connexion a:hover {
+    color: #7cf5ff;
+}

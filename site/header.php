@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="header.css" rel="stylesheet" />
+
+
+</head>
+<body>
+<?php
+
+if(isset($_POST['dash'])){
+    header('Location: dashboard.php');
+    exit();
+}
+
+if(isset($_POST['home'])){
+    header('Location: index.php');
+    exit();
+}
+
+if(isset($_POST['portfolio'])){
+    header('Location: wallet.php');
+    exit();
+}
+
+if(isset($_POST['marche'])){
+    header('Location: marches.php');
+    exit();
+}
+?>
+<header class="navbar">
+
+
+    <nav>
+        <form method="POST" action="" class="nav-form">
+            <button type="submit" name="home">Accueil</button>
+                        <button type="submit" name="dash">Dashboard</button>
+
+            <button type="submit" name="marche">Marchés</button>
+            <button type="submit" name="portfolio">Portfolio</button>
+            
+        </form>
+    </nav>
+</header>
+</body>
+</html>

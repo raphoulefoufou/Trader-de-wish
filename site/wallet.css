@@ -1,0 +1,104 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
+    padding: 30px;
+}
+
+/* Container principal */
+.wallet-container {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Titres */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Table */
+.marches {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Header */
+.marches th {
+    text-align: left;
+    padding: 15px;
+    background: #1f2937;
+    color: #9ca3af;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Lignes */
+.marches td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* Hover effet */
+.marches tr:hover {
+    background: #1a2235;
+}
+
+/* Valeurs positives */
+.marches td:nth-child(2) {
+    color: #22c55e;
+    font-weight: 500;
+}
+
+/* Pourcentage */
+.marches td:nth-child(3) {
+    text-align: right;
+    color: #9ca3af;
+}
+
+/* Message login */
+.login-message {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    color: #f87171;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .wallet-container {
+        padding: 20px;
+    }
+
+    .marches th, 
+    .marches td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
